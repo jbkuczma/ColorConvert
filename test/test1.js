@@ -14,3 +14,12 @@ describe('Array', function() {
      });
   });
 });
+
+describe('Color', function(){
+    describe('Hex to RGB', function(){
+
+    });
+    describe('RGB to Hex', function(){
+
+    });
+});
