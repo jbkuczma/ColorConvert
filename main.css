@@ -1,9 +1,31 @@
+html {
+    /*background-color: #343d46;
+    color: #efefef;*/
+    color: #343d46;
+    background-color: #efefef;
+}
+body {
+    height: 100%;
+}
+#hex, #rgb {
+    display: inline;
+    width: 60%;
+    max-width: 320px;
+    text-align: left;
+    font-size: 32px;
+    margin: 20px;
+}
+.color_inputs {
+    top: 50%;
+    width: 90%;
+    left: 50%;
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -o-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+    text-align: center;
+}
 .head {
     text-align: center;
-}
-.button_selector {
-    text-align: center;
-}
-.button_selector a {
-    margin-right: 20px;
 }
