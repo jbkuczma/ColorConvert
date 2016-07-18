@@ -1,4 +1,5 @@
 var assert = require('chai').assert;
+var externalFunctions = require('../colorConverter.js');
 
 describe('Array', function() {
   describe('#indexOf()', function() {
@@ -17,7 +18,9 @@ describe('Array', function() {
 
 describe('Color', function(){
     describe('Hex to RGB', function(){
-
+        it('#000000 should be rgb(0,0,0)', function(){
+            assert.equal(externalFunctions.hexToRGB('#000000'), 'rgb(0,0,0)');
+        });
     });
     describe('RGB to Hex', function(){
 

@@ -4,7 +4,7 @@
   "description": "easily convert hex to rgb or vice versa",
   "main": "main.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -u tdd --reporter spec"
+    "test": "mocha -u tdd --reporter spec"
   },
   "repository": {
     "type": "git",

@@ -1,14 +1,7 @@
-$(document).ready(function(){
-    $('#hex').on('input',function(e){
-        var hexData = $('#hex').val();
-        hexToRGB(hexData);
-    });
-    $('#rgb').on('input',function(e){
-        var rgbData = $('#rgb').val();
-        rgbToHex(rgbData);
-    });
-});
-
+/*
+ * This file is strictly for testing the functions that are found in script.js.
+ * These functions are identical to the functions found in script.js.
+ */
 function hexToRGB(hexValue){
     hexValue = hexValue.replace('#','');
     var redVal = parseInt(hexValue.slice(0,2), 16);
@@ -18,7 +11,9 @@ function hexToRGB(hexValue){
         return 'rgb('+redVal+','+greenVal+','+blueVal+')';
     }
 }
-
 function rgbToHex(rgbValue){
 
 }
+module.exports = {
+    hexToRGB
+};
