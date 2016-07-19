@@ -98,3 +98,26 @@ describe('Color Tests', function(){
 
     });
 });
+
+describe('Helper function tests', function(){
+    describe('Converting to Hex', function(){
+        it('255 should be FF', function(){
+            assert.equal(externalFunctions.numberToHex('255'), 'FF');
+        });
+        it('0 should be 00', function(){
+            assert.equal(externalFunctions.numberToHex('0'), '00');
+        });
+        it('10 should be 0A', function(){
+            assert.equal(externalFunctions.numberToHex('10'), '0A');
+        });
+        it('120 should be 78', function(){
+            assert.equal(externalFunctions.numberToHex('120'), '78');
+        });
+        it('GOAT should be undefined', function(){
+            assert.equal(externalFunctions.numberToHex('GOAT'), undefined);
+        });
+        it('2+2=4 should be undefined', function(){
+            assert.equal(externalFunctions.numberToHex('2+2=4'), undefined);
+        });
+    });
+});
