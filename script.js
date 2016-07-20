@@ -1,5 +1,3 @@
-// W3C algorithm to determine brightness of color -> change font color
-// add this is: ((Red value X 299) + (Green value X 587) + (Blue value X 114)) / 1000
 $(document).ready(function(){
     $('#hex').on('input',function(e){
         var hexData = $('#hex').val();
@@ -50,10 +48,33 @@ function rgbToHex(rgbValue){
     }
 }
 
-function determineBrightness(color){
-
+/* uses the formula found here: https://en.wikipedia.org/wiki/Relative_luminance
+ * to determine the brightness of the provided color.
+ * Y = 0.2126R * 0.7152G + 0.0722B
+ */
+function determineBrightness(red, green, blue){
+    var brightnessLevel = ((parseInt(red) * 0.2126) + (parseInt(green) * 0.7152) + (parseInt(blue) * 0.0722));
+    brightnessLevel >= 128 ? $('html').css('color', '#343d46') : $('html').css('color', '#efefef');
 }
 
 function setBackground(color){
-    color === undefined ? $('html').css('background-color', '#efefef') : $('html').css('background-color', color);
+    color === undefined ? $('html').css({'background-color': '#efefef', 'color': '#343d46'}) : $('html').css('background-color', color);
+    if(typeof color === 'string'){
+        if(color[0] === '#'){
+            var rgbColor = hexToRGB(color);
+            rgbColor = rgbColor.slice(4).split(','); //gets rid of 'rgb('
+            var red = rgbColor[0];
+            var green = rgbColor[1];
+            var blue = rgbColor[2];
+            determineBrightness(red, green, blue);
+
+        }else{
+            var rgbColor = $('#rgb').val();
+            rgbColor = rgbColor.slice(4).split(','); //gets rid of 'rgb('
+            var red = rgbColor[0];
+            var green = rgbColor[1];
+            var blue = rgbColor[2];
+            determineBrightness(red, green, blue);
+        }
+    }
 }
