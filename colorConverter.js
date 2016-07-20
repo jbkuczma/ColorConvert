@@ -45,5 +45,6 @@
  }
 module.exports = {
     hexToRGB,
-    numberToHex
+    numberToHex,
+    rgbToHex
 };

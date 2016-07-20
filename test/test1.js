@@ -95,7 +95,34 @@ describe('Color Tests', function(){
         });
     });
     describe('RGB to Hex', function(){
-
+        describe('With rgb()', function(){
+            it('rgb(0,0,0) should be #000000', function(){
+                assert.equal(externalFunctions.rgbToHex('rgb(0,0,0)'), '#000000');
+            });
+            it('rgb(255,255,255) should be #FFFFFF', function(){
+                assert.equal(externalFunctions.rgbToHex('rgb(255,255,255)'), '#FFFFFF');
+            });
+            it('rgb(8,16,24) should be #081018', function(){
+                assert.equal(externalFunctions.rgbToHex('rgb(8,16,24)'), '#081018');
+            });
+            it('rgb(146,56,89) should be #923859', function(){
+                assert.equal(externalFunctions.rgbToHex('rgb(146,56,89)'), '#923859');
+            });
+        });
+        describe('Without rgb()', function(){
+            it('0,0,0 should be #000000', function(){
+                assert.equal(externalFunctions.rgbToHex('0,0,0'), '#000000');
+            });
+            it('255,255,255 should be #FFFFFF', function(){
+                assert.equal(externalFunctions.rgbToHex('255,255,255'), '#FFFFFF');
+            });
+            it('8,16,24 should be #081018', function(){
+                assert.equal(externalFunctions.rgbToHex('8,16,24'), '#081018');
+            });
+            it('146,56,89 should be #923859', function(){
+                assert.equal(externalFunctions.rgbToHex('146,56,89'), '#923859');
+            });
+        });
     });
 });
 
